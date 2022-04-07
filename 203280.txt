@@ -1,0 +1,233 @@
+
+
+4. Клонирам репо 
+C:\Users\Tea\Desktop\СИ\lab1>git clone  https://github.com/temelkovskaT/SI_2022_lab1_203280.git
+
+5. Користам Git Bash за додавање на .txt датотеката 
+Tea@DESKTOP-21OG5CQ MINGW64 ~/Desktop/СИ/lab1/SI_2022_lab1_203280 (master)
+$ vim shopping_list.txt
+
+Sunscreen
+Magnesium
+Gift
+Other gift
+Deodorant
+:wq
+
+Се враќам на Git CMD, влегувам во локалното репо и ја комитнувам промената (додади shopping list) 
+C:\Users\Tea\Desktop\СИ\lab1>cd SI_2022_lab1_203280
+C:\Users\Tea\Desktop\СИ\lab1\SI_2022_lab1_203280>git add .
+C:\Users\Tea\Desktop\СИ\lab1\SI_2022_lab1_203280>git commit -m "Add 5 items to the shopping list"
+
+6. Промените ги правам со Git Bash 
+Tea@DESKTOP-21OG5CQ MINGW64 ~/Desktop/СИ/lab1/SI_2022_lab1_203280 (master)
+$ nano shopping_list.txt
+
+Sunscreen x2
+Magnesium x2
+Gift x1
+Other gift x1
+Deodorant x1
+
+^s
+^x
+
+Повторно на Git CMD, ги комитнувам промените (додади квнтитет)
+C:\Users\Tea\Desktop\СИ\lab1\SI_2022_lab1_203280>git add .
+C:\Users\Tea\Desktop\СИ\lab1\SI_2022_lab1_203280>git commit -m "Add quantities to the items."
+
+7. Креирам две гранки branch1 и branch2 
+C:\Users\Tea\Desktop\СИ\lab1\SI_2022_lab1_203280>git checkout -b branch1
+C:\Users\Tea\Desktop\СИ\lab1\SI_2022_lab1_203280>git checkout -b branch2
+
+8.
+C:\Users\Tea\Desktop\СИ\lab1\SI_2022_lab1_203280>git log
+commit 2baef77704cef76b6debb86971af61da0280ac19 (HEAD -> branch2, master, branch1)
+Author: Tea <tea.temelkovska410@gmail.com>
+Date:   Thu Apr 7 15:16:07 2022 +0200
+
+    Add quantities to the items.
+
+commit 33d25a1249b366ee9ea10a5cd4a7ba122adc80d1
+Author: Tea <tea.temelkovska410@gmail.com>
+Date:   Thu Apr 7 15:11:41 2022 +0200
+
+    Add 5 items to the shopping list
+
+commit 82f60683793f44e42a2efb0e0785233812429f06 (origin/master, origin/HEAD)
+Author: Teodora Temelkovska <85082180+temelkovskaT@users.noreply.github.com>
+Date:   Thu Apr 7 15:02:25 2022 +0200
+
+    Initial commit
+
+9. Ги синхронизирам гранките со origin со командата push
+C:\Users\Tea\Desktop\СИ\lab1\SI_2022_lab1_203280>git push origin branch1
+C:\Users\Tea\Desktop\СИ\lab1\SI_2022_lab1_203280>git push origin branch2
+C:\Users\Tea\Desktop\СИ\lab1\SI_2022_lab1_203280>git push origin master
+
+10. Се префрлам на гранката branch 1
+C:\Users\Tea\Desktop\СИ\lab1\SI_2022_lab1_203280>git checkout branch1
+
+11. Промена на 5тата ставка 
+Tea@DESKTOP-21OG5CQ MINGW64 ~/Desktop/СИ/lab1/SI_2022_lab1_203280 (branch1)
+$ nano shopping_list.txt
+
+Sunscreen x2
+Magnesium x2
+Gift x1
+Other gift x1
+Deodorant x2
+
+Комитнувам промени
+C:\Users\Tea\Desktop\СИ\lab1\SI_2022_lab1_203280>git add .
+C:\Users\Tea\Desktop\СИ\lab1\SI_2022_lab1_203280>git commit -m "Change quantity of item #5"
+
+12. Се враќам на master
+C:\Users\Tea\Desktop\СИ\lab1\SI_2022_lab1_203280>git checkout master
+
+13. Промена на ставка #2
+Tea@DESKTOP-21OG5CQ MINGW64 ~/Desktop/СИ/lab1/SI_2022_lab1_203280 (master)
+$ nano shopping_list.txt
+
+Sunscreen x2
+Magnesium x1
+Gift x1
+Other gift x1
+Deodorant x1
+
+Коминувам промени
+C:\Users\Tea\Desktop\СИ\lab1\SI_2022_lab1_203280>git commit -a -m "Change quantity of item #2"
+
+14. Ги синхронизирам граникте 
+C:\Users\Tea\Desktop\СИ\lab1\SI_2022_lab1_203280>git push origin master
+C:\Users\Tea\Desktop\СИ\lab1\SI_2022_lab1_203280>git push origin branch1
+C:\Users\Tea\Desktop\СИ\lab1\SI_2022_lab1_203280>git push origin branch2
+
+15. Се префрлам на branch2
+C:\Users\Tea\Desktop\СИ\lab1\SI_2022_lab1_203280>git checkout branch2
+
+16. Променувам име на ставка #4 (Other gift-> Fruit)
+Tea@DESKTOP-21OG5CQ MINGW64 ~/Desktop/СИ/lab1/SI_2022_lab1_203280 (branch2)
+$ nano shopping_list.txt
+
+Sunscreen x2
+Magnesium x2
+Gift x1
+Fruit x1
+Deodorant x1
+
+Комитнувам промени
+C:\Users\Tea\Desktop\СИ\lab1\SI_2022_lab1_203280>git commit -a -m "Modify item #4"
+
+17.
+C:\Users\Tea\Desktop\СИ\lab1\SI_2022_lab1_203280>git log
+commit caf909da7ed7b10e3eb8aec66c29492ced58ef91 (HEAD -> branch2)
+Author: Tea <tea.temelkovska410@gmail.com>
+Date:   Thu Apr 7 15:47:05 2022 +0200
+
+    Modify item #4
+
+commit 2baef77704cef76b6debb86971af61da0280ac19 (origin/branch2)
+Author: Tea <tea.temelkovska410@gmail.com>
+Date:   Thu Apr 7 15:16:07 2022 +0200
+
+    Add quantities to the items.
+
+commit 33d25a1249b366ee9ea10a5cd4a7ba122adc80d1
+Author: Tea <tea.temelkovska410@gmail.com>
+Date:   Thu Apr 7 15:11:41 2022 +0200
+
+    Add 5 items to the shopping list
+
+commit 82f60683793f44e42a2efb0e0785233812429f06
+Author: Teodora Temelkovska <85082180+temelkovskaT@users.noreply.github.com>
+Date:   Thu Apr 7 15:02:25 2022 +0200
+
+    Initial commit
+
+18.Додавам 6та ставка (The other gift)
+Tea@DESKTOP-21OG5CQ MINGW64 ~/Desktop/СИ/lab1/SI_2022_lab1_203280 (branch2)
+$ nano shopping_list.txt
+ 
+Sunscreen x2
+Magnesium x2
+Gift x1
+Fruit x1
+Deodorant x1
+The other gift x1
+
+Бидејќи се бара да се додаде уште една промена на претходниот комит, користам amend
+C:\Users\Tea\Desktop\СИ\lab1\SI_2022_lab1_203280>git add .
+C:\Users\Tea\Desktop\СИ\lab1\SI_2022_lab1_203280>git commit --amend -m "Modify item #4 and add item #6"
+
+19.
+C:\Users\Tea\Desktop\СИ\lab1\SI_2022_lab1_203280>git log
+commit f815110ed2af26e4f19467a68b57869ea752694d (HEAD -> branch2)
+Author: Tea <tea.temelkovska410@gmail.com>
+Date:   Thu Apr 7 15:47:05 2022 +0200
+
+    Modify item #4 and add item #6
+
+commit 2baef77704cef76b6debb86971af61da0280ac19 (origin/branch2)
+Author: Tea <tea.temelkovska410@gmail.com>
+Date:   Thu Apr 7 15:16:07 2022 +0200
+
+    Add quantities to the items.
+
+commit 33d25a1249b366ee9ea10a5cd4a7ba122adc80d1
+Author: Tea <tea.temelkovska410@gmail.com>
+Date:   Thu Apr 7 15:11:41 2022 +0200
+
+    Add 5 items to the shopping list
+
+commit 82f60683793f44e42a2efb0e0785233812429f06
+Author: Teodora Temelkovska <85082180+temelkovskaT@users.noreply.github.com>
+Date:   Thu Apr 7 15:02:25 2022 +0200
+
+    Initial commit
+
+20. Се префрлам на master 
+C:\Users\Tea\Desktop\СИ\lab1\SI_2022_lab1_203280>git checkout master
+
+Ја спојувам branch1 кон master
+C:\Users\Tea\Desktop\СИ\lab1\SI_2022_lab1_203280>git merge branch1
+
+21. Конфликт!
+Sunscreen x2
+Magnesium x1
+Gift x1
+<<<<<<< HEAD
+Other gift x1
+Deodorant x2
+=======
+Fruit x1
+Deodorant x1
+The other gift x1
+>>>>>>> branch2
+
+
+Го променувам во 
+Sunscreen x2
+Magnesium x1
+Gift x1
+Fruit x1
+Deodorant x1
+The other gift x1
+
+И ја комитнувам промената на master
+C:\Users\Tea\Desktop\СИ\lab1\SI_2022_lab1_203280>git add .
+
+C:\Users\Tea\Desktop\СИ\lab1\SI_2022_lab1_203280>git commit
+
+На крај ја спојувам branch2  кон master
+C:\Users\Tea\Desktop\СИ\lab1\SI_2022_lab1_203280>git merge branch2
+
+22. Ја додавам "203280.txt" во локалното репо и комитнувам
+C:\Users\Tea\Desktop\СИ\lab1\SI_2022_lab1_203280>git add .
+C:\Users\Tea\Desktop\СИ\lab1\SI_2022_lab1_203280>git commit -m "Add docs"
+
+23. Синхронизирам гранки со origin
+C:\Users\Tea\Desktop\СИ\lab1\SI_2022_lab1_203280>git push origin master
+C:\Users\Tea\Desktop\СИ\lab1\SI_2022_lab1_203280>git push origin branch1
+C:\Users\Tea\Desktop\СИ\lab1\SI_2022_lab1_203280>git push origin branch2
+
